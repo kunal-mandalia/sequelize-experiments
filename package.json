@@ -1,0 +1,20 @@
+{
+  "name": "sequelize-experiments",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kunal-mandalia/sequelize-experiments.git",
+  "author": "Kunal Mandalia <kunal.v.mandalia@gmail.com> (http://kunalmandalia.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "express": "4.16.3",
+    "pg": "7.4.3",
+    "pg-hstore": "2.3.2",
+    "sequelize": "4.38.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.3"
+  },
+  "scripts": {
+    "watch": "nodemon index.js"
+  }
+}
