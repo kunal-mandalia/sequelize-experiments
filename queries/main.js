@@ -1,5 +1,5 @@
-async function mainQueries({ models }) {
-  const { Team, Player, Sponsorship } = models
+async function mainQueries(db) {
+  const { Team, Player, Sponsorship } = db
   const data = await Team.findAll({
     include: [
       {
@@ -15,10 +15,10 @@ async function mainQueries({ models }) {
   
   data.forEach(team => {
     console.log(`${team.get('name')} has:`)
-    const players = team.get('players')
+    const players = team.get('Players')
     players.forEach(player => {
       console.log(` ${player.get('name')} who is sponsored by:`)
-      const sponsorships = player.get('sponsorships')
+      const sponsorships = player.get('Sponsorships')
       sponsorships.forEach(sponsorship => {
         console.log(`   ${sponsorship.company}, valued at ${sponsorship.value}`)
       })

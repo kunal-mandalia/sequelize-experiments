@@ -1,15 +1,15 @@
-async function startupQueries({ sequelize, models }) {
+async function startupQueries(db) {
   try {
-    const { Team, Player, Sponsorship } = models
+    const { Team, Player, Sponsorship } = db
     // Setup seed data
     const seed = await Team.create({
       name: "Arsenal",
       stadium: "Emirates, London",
-      players: [
+      Players: [
         {
           name: "Aaron Ramsey",
           position: "MID",
-          sponsorships: [
+          Sponsorships: [
             {
               company: "Puma",
               value: 3000000
@@ -19,7 +19,7 @@ async function startupQueries({ sequelize, models }) {
         {
           name: "Peter Cech",
           position: "GK",
-          sponsorships: [
+          Sponsorships: [
             {
               company: "Nike",
               value: 5000000
